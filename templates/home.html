@@ -1,0 +1,22 @@
+{% include "header.html" %}
+
+<div class="container-fluid">
+    <div class="box">
+    {% if logged_in %}
+	  <h1>Welcome, {{name}}!</h1>
+      <div id="to-page">
+      <a href="{{ url_for('my_page') }}" class="btn btn-block btn-lg page-btn">My Page</a>
+      </div>
+    {% else %}
+      <h1>Hello!</h1>
+      <div id="login-register">
+      <a href="{{ url_for('login') }}" class="btn btn-block btn-lg login-btn">Login</a>
+      <a href="{{ url_for('register') }}" class="btn btn-block btn-lg register-btn">Register</a>
+      </div>
+    {% endif %}
+    </div>
+
+</div>
+
+{% include "footer.html" %}
+

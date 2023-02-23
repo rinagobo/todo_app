@@ -1,0 +1,49 @@
+{# THIS FILE IS USED FOR ADD AND EDIT FORM #}
+{% include "header.html" %}
+
+    <div class="container">
+      {% if todo_selected %}
+        <h5>Edit your existing todo item.</h5>
+      {% else %}
+        <h5>Add your new todo item.</h5>
+      {% endif %}
+
+      {% if todo_selected %}
+        <form action="{{ url_for('edit', id=todo_selected.id)}}" method="post" id="contact-form">
+      {% else %}
+        <form action="{{ url_for('add')}}" method="post" id="contact-form">
+      {% endif %}
+
+        <div class="form-group">
+          <label>Title</label>
+          {% if todo_selected %}
+            <input name="title" class="form-control" type="text" value={{todo_selected.title}}>
+          {% else %}
+            <input name="title" class="form-control" type="text" placeholder="ToDo Title">
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <label>Deadline</label>
+          {% if todo_selected %}
+            <input name="deadline" class="form-control" type="date" value={{todo_selected.deadline}}>
+          {% else %}
+            <input name="deadline" class="form-control" type="date" placeholder="ToDo Deadline">
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <label>Details</label>
+          {% if todo_selected %}
+            <textarea name="details" class="form-control" rows="3" wrap="hard">{{todo_selected.details}}</textarea>
+          {% else %}
+            <textarea name="details" class="form-control" rows="3" placeholder="ToDo Details"></textarea>
+          {% endif %}
+        </div>
+        {% if todo_selected %}
+          <button type="submit" class="btn btn-outline-info btn-sm submit-btn area-add-btn">Done</button>
+        {% else %}
+          <button type="submit" class="btn btn-outline-info btn-sm submit-btn area-add-btn">Add this item</button>
+        {% endif %}
+      </form>
+    </div>
+
+{% include "footer.html" %}

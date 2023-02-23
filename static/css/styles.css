@@ -1,0 +1,141 @@
+/*** FOR ALL FILES ***/
+a {
+  color: gray;
+  text-align: center;
+}
+
+a:hover {
+  color: #EAC7C7;
+}
+
+/*** header.html and footer.html ***/
+nav {
+  background-color: #EAE0DA;
+}
+
+footer {
+  text-align: center
+}
+
+#brand {
+  color: #F7F5EB;
+}
+
+/*** home.html and register.html and login.html ***/
+#login-register, #to-page {
+    padding-top: 20%;
+}
+
+#login-section, #register-section {
+    padding-top: 10%;
+}
+
+.login-btn, .register-btn, .btn-in, .btn-sign, .page-btn {
+    background-color: #A0C3D2;
+    color: gray;
+}
+
+.login-btn:hover ,.register-btn:hover ,.btn-in:hover ,.btn-sign:hover, .page-btn:hover {
+    color: #F7F5EB;
+}
+
+.btn-in, .btn-sign {
+    margin: auto;
+    width: 50%;
+}
+
+.box {
+    margin: 100px auto;
+    padding: 20px;
+	width:300px;
+	height:300px;
+	background-color: #F7F5EB;
+	color: gray;
+	text-align: center;
+	border-radius: 30px;
+}
+
+/*** my_page.html ***/
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  border-radius: 10px;
+  margin: 5%;
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  width: 300px;
+  height: 250px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #F7F5EB;
+  color: #A0C3D2;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #A0C3D2;
+  color: #EAE0DA;
+  transform: rotateY(180deg);
+}
+
+#edit-delete {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+.edit-btn, .delete-btn {
+  color: #EAE0DA;
+}
+
+.add-btn {
+  background-color: #A0C3D2;
+}
+
+.area-add-btn {
+  text-align: center;
+  margin: 100px auto;
+}
+
+/*** form.html ***/
+.container {
+  background-color: #F7F5EB;
+  color: gray;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-radius: 8px;
+}
+
+#contact-form {
+  padding: 25px 50px;
+}
+
+.submit-btn {
+  background-color: #A0C3D2;
+}

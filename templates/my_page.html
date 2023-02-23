@@ -1,0 +1,36 @@
+{% include "header.html" %}
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        {% for todo in all_todos %}
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h1>{{ loop.index }}</h1>
+              <p>{{todo.title}}</p>
+              <p>by {{todo.deadline}}</p>
+            </div>
+            <div class="flip-card-back">
+              <h5>{{todo.title}}</h5>
+              <p>by {{todo.deadline}}</p>
+              <p>{{todo.details}}</p>
+              <div id="edit-delete">
+                <button class="btn btn-outline-light btn-sm edit-btn"><a href="{{url_for('edit', id=todo.id)}}" style="text-decoration: none;">Edit</a></button>
+                <button class="btn btn-outline-light btn-sm delete-btn"><a href="{{url_for('delete', id=todo.id)}}" style="text-decoration: none;">Delete</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <div class="area-add-btn">
+      <button type="button" class="btn btn-outline-info add-btn"><a href="{{url_for('add')}}" style="text-decoration: none;">Add</a></button>
+    </div>
+
+{% include "footer.html" %}
+
+
+
+
