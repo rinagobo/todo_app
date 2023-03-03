@@ -25,25 +25,25 @@ login_manager.init_app(app)
 def load_user(user_id):
     return User.query.get(int(user_id)) 
 
-from models import User, ToDo
+
 ### CREATE RELATIONAL TABLES ###
-# class User(UserMixin, db.Model):
-#     __tablename__ = "users"
-#     id = db.Column(db.Integer, primary_key=True)
-#     username = db.Column(db.String(50), unique=True)
-#     password = db.Column(db.String(50))
-#     todo_items = relationship('ToDo', back_populates='person')
-#
-# class ToDo(db.Model):
-#     __tablename__ = "todos"
-#     id = db.Column(db.Integer, primary_key=True)
-#     title = db.Column(db.String(50), unique=True, nullable=False)
-#     deadline = db.Column(db.String, nullable=False)
-#     details = db.Column(db.String(200), nullable=False)
-#     person_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-#     person = relationship('User', back_populates='todo_items')
-#
-# db.create_all()
+class User(UserMixin, db.Model):
+    __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True)
+    password = db.Column(db.String(50))
+    todo_items = relationship('ToDo', back_populates='person')
+
+class ToDo(db.Model):
+    __tablename__ = "todos"
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50), unique=True, nullable=False)
+    deadline = db.Column(db.String, nullable=False)
+    details = db.Column(db.String(200), nullable=False)
+    person_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    person = relationship('User', back_populates='todo_items')
+
+db.create_all()
 
 ### CREATE ROUTE ###
 @app.route("/")
