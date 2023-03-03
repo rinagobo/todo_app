@@ -1,2 +1,3 @@
-web: gunicorn app:main.py
+web: gunicorn gettingstarted.wsgi
 
+web: gunicorn hello:app
