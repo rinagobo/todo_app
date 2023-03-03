@@ -43,7 +43,7 @@ class ToDo(db.Model):
     person_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     person = relationship('User', back_populates='todo_items')
 
-# db.create_all()
+db.create_all()
 
 ### CREATE ROUTE ###
 @app.route("/")
