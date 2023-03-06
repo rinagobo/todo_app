@@ -31,7 +31,7 @@ class User(UserMixin, db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True)
-    password = db.Column(db.String(50))
+    password = db.Column(db.String(200))
     todo_items = relationship('ToDo', back_populates='person')
 
 class ToDo(db.Model):
@@ -43,7 +43,7 @@ class ToDo(db.Model):
     person_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     person = relationship('User', back_populates='todo_items')
 
-# db.create_all()
+db.create_all()
 
 ### CREATE ROUTE ###
 @app.route("/")
