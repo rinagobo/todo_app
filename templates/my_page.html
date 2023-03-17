@@ -1,6 +1,11 @@
 {% include "header.html" %}
+
+
+
     <div class="container-fluid">
       <div class="row justify-content-md-center">
+
+        {# Show each todo item and each index, title, deadline and details in a flip card #}
         {% for todo in all_todos %}
         <div class="flip-card">
           <div class="flip-card-inner">
@@ -28,6 +33,8 @@
     <div class="area-add-btn">
       <button type="button" class="btn btn-outline-info add-btn"><a href="{{url_for('add')}}" style="text-decoration: none;">Add</a></button>
     </div>
+
+
 
 {% include "footer.html" %}
 
